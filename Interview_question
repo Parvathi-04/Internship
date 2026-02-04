@@ -1,0 +1,45 @@
+1️⃣ Why should lists be used as instance variables?
+Lists are used to store multiple values inside one object.
+Example:
+If a student has many marks, we store them in a list.
+👉 Each object will have its own separate list.
+
+2️⃣ How does Python manage object-specific data?
+Python uses instance variables.
+Each object stores its own data inside the class using __init__().
+So, every object has separate memory for its data.
+
+3️⃣ What problem does Git solve in real projects?
+Git solves the problem of:
+Tracking code changes
+Managing different versions
+Avoiding code overwrite
+Team collaboration
+👉 It keeps full history of the project.
+
+4️⃣ Why do companies prefer GitHub?
+Companies prefer GitHub because:
+It stores code online (cloud)
+Easy team collaboration
+Tracks changes
+Supports pull requests & code review
+Secure and widely used
+
+5️⃣ What is inheritance and why is it important?
+Inheritance means one class can use properties of another class.
+It is important because:
+Code reuse
+Less duplication
+Easy maintenance
+Better structure
+
+6️⃣ Explain any two types of inheritance with real-world examples.
+🔹 Single Inheritance
+One child inherits from one parent.
+Example:
+Car inherits from Vehicle.
+Car gets engine and wheels from Vehicle.
+🔹 Multiple Inheritance
+One child inherits from two parents.
+Example:
+Child inherits qualities from Father and Mother.
