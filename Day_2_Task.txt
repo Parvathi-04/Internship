@@ -1,0 +1,196 @@
+#5 types of Inheritance
+1. Single Inheritance
+
+One child class inherits from one parent class.
+
+Example:
+class Parent:
+    def show(self):
+        print("This is Parent class")
+
+class Child(Parent):
+    def display(self):
+        print("This is Child class")
+
+obj = Child()
+obj.show()      # Inherited method
+obj.display()
+Output:
+This is Parent class
+This is Child class
+#Here, Child inherits from Parent.
+
+2. Multiple Inheritance
+
+One child class inherits from more than one parent class.
+Example:
+
+class Father:
+    def skill1(self):
+        print("Gardening")
+
+class Mother:
+    def skill2(self):
+        print("Cooking")
+
+class Child(Father, Mother):
+    def skill3(self):
+        print("Coding")
+
+obj = Child()
+obj.skill1()
+obj.skill2()
+obj.skill3()
+Output:
+Gardening
+Cooking
+Coding
+
+Child inherits from both Father and Mother.
+
+3. Multilevel Inheritance
+
+A class inherits from a class, which itself inherits from another class.
+Example:
+
+class Grandparent:
+    def house(self):
+        print("Owns a house")
+
+class Parent(Grandparent):
+    def car(self):
+        print("Owns a car")
+
+class Child(Parent):
+    def bike(self):
+        print("Owns a bike")
+
+obj = Child()
+obj.house()
+obj.car()
+obj.bike()
+Output:
+
+Owns a house
+Owns a car
+Owns a bike
+Child gets properties from both Parent and Grandparent.
+
+4. Hierarchical Inheritance
+Multiple child classes inherit from one parent class.
+Example:
+
+class Animal:
+    def eat(self):
+        print("Eating...")
+
+class Dog(Animal):
+    def bark(self):
+        print("Barking...")
+
+class Cat(Animal):
+    def meow(self):
+        print("Meowing...")
+
+dog = Dog()
+cat = Cat()
+
+dog.eat()
+dog.bark()
+
+cat.eat()
+cat.meow()
+Output:
+
+Eating...
+Barking...
+Eating...
+Meowing...
+Both Dog and Cat inherit from Animal.
+
+5. Hybrid Inheritance
+Combination of two or more types of inheritance.
+Example: Combination of Multilevel + Multiple.
+Example:
+
+class A:
+    def methodA(self):
+        print("Class A")
+
+class B(A):
+    def methodB(self):
+        print("Class B")
+
+class C:
+    def methodC(self):
+        print("Class C")
+
+class D(B, C):
+    def methodD(self):
+        print("Class D")
+
+obj = D()
+obj.methodA()
+obj.methodB()
+obj.methodC()
+obj.methodD()
+Output:
+
+Class A
+Class B
+Class C
+Class D
+This combines:
+Multilevel (A → B → D)
+Multiple (B + C → D)
+
+#Summary
+
+Single
+One parent → One child
+Multiple
+Multiple parents → One child
+Multilevel
+Grandparent → Parent → Child
+Hierarchical
+One parent → Multiple children
+Hybrid
+Combination of above
+
+#Implementation of Single and multiple inheritance
+
+#single inheritance
+
+class species:
+    def __init__(self,breath,legs):
+        self.breath=breath
+        self.legs=legs
+    def __str__(self):
+        return self.breath
+
+class animal(species):
+    def __init__(self, breath, legs, eye_color):
+        super().__init__(breath, legs)
+        self.eye_color=eye_color
+
+    def __str__(self):
+        return f"breath:{self.breath}, eye_color:{self.eye_color}, legs:{self.legs}"
+a=animal("lungs",4,"brown")
+print(a)
+
+
+#multiple inheritance
+class p1:
+    def __init__(self,toy1):
+        self.toy1=toy1
+class p2:
+    def __init__(self,toy2):
+        self.toy2=toy2
+class c(p1,p2):
+    def __init__(self,toy1,toy2):
+        p1.__init__(self,toy1)    #instead of super() we can use class name(parent class name) 
+        p2.__init__(self,toy2)  
+    def __str__(self):
+        return f"toy1:{self.toy1}, toy2:{self.toy2}"
+obj=c("car","doll")
+print(obj)
